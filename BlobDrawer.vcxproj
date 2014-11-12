@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BlobDrawer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\libs;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxMSACore\libs;..\..\..\addons\ofxMSACore\src;..\..\..\addons\ofxMSAObjCPointer\libs;..\..\..\addons\ofxMSAObjCPointer\src;..\..\..\addons\ofxMSAPhysics\libs;..\..\..\addons\ofxMSAPhysics\src;..\..\..\addons\ofxShivaVG\libs;..\..\..\addons\ofxShivaVG\src;..\..\..\addons\ofxShivaVG\libs\ShivaVG;..\..\..\addons\ofxShivaVG\libs\ShivaVG\include;..\..\..\addons\ofxShivaVG\libs\ShivaVG\include\vg;..\..\..\addons\ofxShivaVG\libs\ShivaVG\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\libs;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxMSACore\libs;..\..\..\addons\ofxMSACore\src;..\..\..\addons\ofxMSAObjCPointer\libs;..\..\..\addons\ofxMSAObjCPointer\src;..\..\..\addons\ofxMSAPhysics\libs;..\..\..\addons\ofxMSAPhysics\src;..\..\..\addons\ofxShivaVG\libs;..\..\..\addons\ofxShivaVG\src;..\..\..\addons\ofxShivaVG\libs\ShivaVG;..\..\..\addons\ofxShivaVG\libs\ShivaVG\include;..\..\..\addons\ofxShivaVG\libs\ShivaVG\include\vg;..\..\..\addons\ofxShivaVG\libs\ShivaVG\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxMSACore\src\MSACoreGL.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxMSAObjCPointer\src\MSAObjCPointer.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\src\ofxShivaVGRenderer.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\src\simpleVGContext.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\src\simpleVGPath.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shArrays.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shContext.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shExtensions.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shGeometry.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shImage.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shPaint.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shParams.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shPath.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shPipeline.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shVectors.c" />
+    <ClCompile Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shVgu.c" />
+    <ClCompile Include="src\Segment.cpp" />
+    <ClCompile Include="src\VerletShape.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h" />
+    <ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACore-Cinder.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACore-OF.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACore.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACoreCommon.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACoreGL.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSACore\src\MSACoreMath.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAObjCPointer\src\MSAObjCPointer.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysics.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysics2D.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysics3D.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsAttraction.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsCallbacks.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsConstraint.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsDataRecorder.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParams.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParticle.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParticleDrawer.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParticleUpdater.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsSector.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsSpring.h" />
+    <ClInclude Include="..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsWorld.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\src\ofxShivaVGRenderer.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\src\simpleVGContext.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\src\simpleVGPath.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\include\vg\openvg.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\include\vg\vgu.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shArrayBase.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shArrays.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shContext.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shDefs.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shExtensions.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shGeometry.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shImage.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shPaint.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shPath.h" />
+    <ClInclude Include="..\..\..\addons\ofxShivaVG\libs\ShivaVG\src\shVectors.h" />
+    <ClInclude Include="src\Segment.h" />
+    <ClInclude Include="src\VerletShape.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
