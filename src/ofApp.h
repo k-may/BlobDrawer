@@ -28,4 +28,5 @@ class ofApp : public ofBaseApp{
 		World2D physics;
 
 		VerletShape _verletShape;
+		ShapeFactor _shapeFactory;
 };

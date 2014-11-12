@@ -7,16 +7,20 @@
 class ShapeFactory
 {
 public:
-	ShapeFactory(void);
+	ShapeFactory() { reset(); }
 	~ShapeFactory(void);
 
+	void reset();
 	void addPoint(ofVec2f point);
 
-	void addLine();
+	void addLine(ofVec2f point);
 
-	bool CheckIntersection(ofVec2f p1, ofVec2f p2, const  ofVec2f& o);
-
+	bool CheckIntersection(ofVec2f p1, ofVec2f q1, ofVec2f p2, ofVec2f q2, const ofVec2f& o);
+	void draw();
 	vector<ofVec2f> points;
+	ofVec2f _lastPoint;
+
+	bool _lineComplete;
 
 };
 
